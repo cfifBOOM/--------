@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Пластиковая Карта</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="card-container" onclick="flipCard()">
+            <div class="card" id="plasticCard">
+                <div class="card-front">
+                    <div class="logo-row">
+                        <div class="chip"></div>
+                        <div class="card-type">VISA</div>
+                    </div>
+                    <div class="card-number" id="view-number">•••• •••• •••• ••••</div>
+                    <div class="card-holder">
+                        <div>
+                            <div class="label">Cardholder Name</div>
+                            <div id="view-name">YOUR NAME</div>
+                        </div>
+                        <div>
+                            <div class="label">Expires</div>
+                            <div id="view-expiry">MM/YY</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <div class="magnetic-stripe"></div>
+                    <div class="signature-cvv-row">
+                        <div class="label" style="text-align: right; margin-right: 45px;">CVV2</div>
+                        <div class="signature-zone">
+                            <span class="cvv-box" id="view-cvv">•••</span>
+                        </div>
+                    </div>
+                    <div class="back-info">
+                        <p>Данная карта является собственностью банка-эмитента. Использование карты регулируется условиями банковского договора.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <form class="card-form" onsubmit="event.preventDefault();">
+            <div class="input-group">
+                <label>Номер карты</label>
+                <input type="text" id="input-number" placeholder="4532 7182 9381 0024" maxlength="19">
+            </div>
+            
+            <div class="input-group">
+                <label>Имя владельца (латиницей)</label>
+                <input type="text" id="input-name" placeholder="ALEX SMITH" style="text-transform: uppercase;">
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <label>Срок действия</label>
+                    <input type="text" id="input-expiry" placeholder="12/30" maxlength="5">
+                </div>
+                <div class="input-group">
+                    <label>CVV</label>
+                    <input type="text" id="input-cvv" placeholder="942" maxlength="3">
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
